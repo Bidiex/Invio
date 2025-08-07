@@ -17,11 +17,17 @@ closeBtn.addEventListener("click", () => {
 });
 
 const navbarWrapper = document.querySelector('.wrapper-navbar');
+const navbarToggle = document.querySelector('.navbar__toggle');
+const navbarMenuBtn = document.querySelector('#navbar__menu-btn');
 
 window.addEventListener('scroll', () => {
   if(window.scrollY > 10){
     navbarWrapper.classList.add('scrolled');
+    navbarToggle.classList.add('scrolled');
+    navbarMenuBtn.classList.add('scrolled');
   }else{
     navbarWrapper.classList.remove('scrolled');
+    navbarToggle.classList.remove('scrolled');
+    navbarMenuBtn.classList.remove('scrolled');
   }
 });

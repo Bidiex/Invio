@@ -57,8 +57,16 @@ button {
 }
 
 .wrapper-navbar.scrolled {
-  background: var(--primary-background-color);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar__toggle.scrolled{
+  background: white;
+}
+
+#navbar__menu-btn.scrolled{
+  color: var(--paragraph-color);
 }
 
 .navbar {
@@ -499,8 +507,8 @@ button {
 }
 
 .testimonial-item{
-  min-width: 380px;
-  background: linear-gradient(25deg, rgb(226, 226, 226), white);
+  min-width: 350px;
+  background: linear-gradient(25deg, rgb(226, 226, 226) 25%, white 80%, hsl(from var(--primary-color)h s calc(l + 40)));
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -522,6 +530,22 @@ button {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  position: relative;
+}
+
+.img-wrapper::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #0c0c0c;
+  box-shadow: 0 0 12px var(--secondary-color);
+  z-index: 2;
 }
 
 .testimonial-item__profile p{
@@ -632,6 +656,7 @@ button {
 @media (width >=1026px) {
 
   .wrapper-navbar.scrolled {
+    background: var(--primary-background-color);
     box-shadow: none;
   }
 
