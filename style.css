@@ -507,8 +507,8 @@ button {
 }
 
 .testimonial-item{
-  min-width: 350px;
-  background: linear-gradient(25deg, rgb(226, 226, 226) 25%, white 80%, hsl(from var(--primary-color)h s calc(l + 40)));
+  min-width: 300px;
+  background: linear-gradient(25deg, white 50%, hsl(from var(--primary-color)h s calc(l + 40)) 95%);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -555,7 +555,7 @@ button {
 
 .ri-double-quotes-l{
   font-size: 2rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .cta-content{
