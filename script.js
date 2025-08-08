@@ -31,3 +31,33 @@ window.addEventListener('scroll', () => {
     navbarMenuBtn.classList.remove('scrolled');
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".testimonial-container");
+  const btnLeft = document.querySelector(".slider-arrow.left");
+  const btnRight = document.querySelector(".slider-arrow.right");
+
+  // Detectar el ancho de una tarjeta (incluyendo el gap)
+  const getCardWidth = () => {
+    const card = container.querySelector(".testimonial-item");
+    const cardStyle = getComputedStyle(card);
+    const gap = parseInt(getComputedStyle(container).gap) || 0;
+    return card.offsetWidth + gap;
+  };
+
+  btnRight.addEventListener("click", () => {
+    container.scrollBy({
+      left: getCardWidth(),
+      behavior: "smooth"
+    });
+  });
+
+  btnLeft.addEventListener("click", () => {
+    container.scrollBy({
+      left: -getCardWidth(),
+      behavior: "smooth"
+    });
+  });
+});
+
