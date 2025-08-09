@@ -72,3 +72,67 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const swiper = new Swiper(".swiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  initialSlide: 0,
+  speed: 600,
+  preventClicks: true,
+  slidesPerView: "auto",
+
+  // Efecto Coverflow
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 80,
+    depth: 350,
+    modifier: 1,
+    slideShadows: true,
+  },
+
+  // Control táctil en móvil
+  freeMode: {
+    enabled: window.innerWidth < 768, // solo mobile
+    momentum: true,
+  },
+
+  // Paginación
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  // Navegación (solo desktop)
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // Evento click/tap
+  on: {
+    click() {
+      if (this.clickedIndex !== undefined) {
+        if (this.clickedIndex === this.activeIndex) {
+          // Slide activo tocado → acción extra
+          console.log(`Slide ${this.clickedIndex + 1} activo`);
+        } else {
+          // Centrar slide tocado
+          this.slideTo(this.clickedIndex);
+        }
+      }
+    },
+  },
+});
+
+// Detectar cambios de tamaño de pantalla para activar/desactivar freeMode
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 768) {
+    swiper.params.freeMode.enabled = true;
+  } else {
+    swiper.params.freeMode.enabled = false;
+  }
+  swiper.update();
+});
+
+
