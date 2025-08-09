@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invio</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/invitaciones.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -27,7 +27,7 @@
       <div id="navbar-content" class="navbar-content oculto">
 
         <ul id="navbar-links" class="navbar-links">
-          <li class="navbar__link"><a href="#">Invitaciones</a></li>
+          <li class="navbar__link"><a href="index.html">Inicio</a></li>
           <li class="navbar__link"><a href="#precios">Precios</a></li>
           <li class="navbar__link"><a href="#">TyC</a></li>
         </ul>
@@ -46,17 +46,63 @@
       <p class="section__bubble">Invitaciones</p>
       <h2 class="section__title">Nuestra galería de invitaciones</h2>
 
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
+      <div class="slider-container">
+        <input type="radio" name="slide" id="slide1" class="slider-input">
+        <input type="radio" name="slide" id="slide2" class="slider-input">
+        <input type="radio" name="slide" id="slide3" class="slider-input" checked>
+        <input type="radio" name="slide" id="slide4" class="slider-input">
+        <input type="radio" name="slide" id="slide5" class="slider-input">
+
+        <div class="slider-wrapper">
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-number">01</div>
+                    <div class="slide-title">Innovación</div>
+                    <div class="slide-description">Creamos soluciones innovadoras que transforman la forma de trabajar</div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-number">02</div>
+                    <div class="slide-title">Tecnología</div>
+                    <div class="slide-description">Utilizamos la última tecnología para desarrollar productos únicos</div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-number">03</div>
+                    <div class="slide-title">Experiencia</div>
+                    <div class="slide-description">Más de 10 años creando experiencias digitales extraordinarias</div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-number">04</div>
+                    <div class="slide-title">Diseño</div>
+                    <div class="slide-description">Diseños elegantes y funcionales que cautivan a los usuarios</div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-number">05</div>
+                    <div class="slide-title">Futuro</div>
+                    <div class="slide-description">Construyendo el futuro de la interacción digital hoy</div>
+                </div>
+            </div>
         </div>
 
-        <div class="swiper-pagination"></div>
-      </div>
+        <div class="controls">
+            <button class="arrow arrow-prev">‹</button>
+            <div class="indicators">
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+                <div class="indicator" data-slide="3"></div>
+                <div class="indicator" data-slide="4"></div>
+                <div class="indicator" data-slide="5"></div>
+            </div>
+            <button class="arrow arrow-next">›</button>
+        </div>
+    </div>
 
     </section>
 
@@ -85,7 +131,6 @@
 
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
 
 </html>
